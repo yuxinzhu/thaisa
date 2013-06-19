@@ -3,7 +3,7 @@
 ### Important Information
 
 
-__Staging Server__: `www.thaisa.herokuapp.com` [LINK](www.thaisa.herokuapp.com)
+__Staging Server__: `www.thaisa.herokuapp.com` [LINK](http://www.thaisa.herokuapp.com)
 
 __Note On Staging Server__: I will periodically push our latest code to the staging server to show Golf what we've been up to.
 
