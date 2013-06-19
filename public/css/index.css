@@ -1,0 +1,51 @@
+.menu-bar {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+.menu-bar ul {
+  list-style: none;
+}
+.menu-bar ul li {
+  padding-top: 20px;
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+}
+.menu-bar ul li a {
+  display: block;
+  vertical-align: center;
+  color: black;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  text-decoration: none;
+}
+.menu-bar ul li:hover {
+  border-top: 8px #241d4f solid;
+  padding-top: 12px;
+}
+.menu-bar ul li.selected {
+  padding-top: 12px;
+  border-top: 8px #ed1c24 solid;
+}
+.flexslider {
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 0px;
+  margin-top: 20px;
+}
+.flex-image {
+  width: 100%;
+  height: 400px;
+}
+.flex-image.image1 {
+  background: url("../images/picture1.jpg") no-repeat;
+  background-size: 100%;
+}
+.flex-image.image2 {
+  background: url("../images/picture2.jpg") center center no-repeat;
+  background-size: 100%;
+}
