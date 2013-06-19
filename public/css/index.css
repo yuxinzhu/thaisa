@@ -23,7 +23,7 @@
   text-decoration: none;
 }
 .menu-bar ul li:hover {
-  border-top: 8px #241d4f solid;
+  border-top: 8px #ed1c24 solid;
   padding-top: 12px;
 }
 .menu-bar ul li.selected {
