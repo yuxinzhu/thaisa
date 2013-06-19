@@ -30,6 +30,9 @@
   padding-top: 12px;
   border-top: 8px #ed1c24 solid;
 }
+.flexslider-container {
+  height: 400px;
+}
 .flexslider {
   background: none;
   border: none;
@@ -43,9 +46,14 @@
 }
 .flex-image.image1 {
   background: url("../images/picture1.jpg") no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 .flex-image.image2 {
   background: url("../images/picture2.jpg") center center no-repeat;
-  background-size: 100%;
+  background-size: cover;
+}
+@media screen and (max-width: 768px) {
+  .flex-image {
+    height: 200px;
+  }
 }
