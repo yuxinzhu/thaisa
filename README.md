@@ -7,13 +7,10 @@ __Staging Server__: `www.thaisa.herokuapp.com` [LINK](http://thaisa.herokuapp.co
 
 __Note On Staging Server__: I will periodically push our latest code to the staging server to show Golf what we've been up to.
 
+Even though the ThaiSA site will be a static website, we should initiate the site with `python -m SimpleHTTPServer 9292` from within `\public`. This allows you to test the site on other devices on the local network (ie. iPhone) to ensure the responsive design is correct via `<ip_address>:9292`. 
 
+__Note__: For some reason, I couldn't get Ruby Rack to correctly serve static HTML files correctly (other than `index.html`). So ignore the Ruby framework for now, and just `cd` directly into `\public`. 
 
-Even though the ThaiSA site will be a static website, it currently lives in a Ruby file structure to facilitate deploying on to our staging server (Heroku does not allow random static files), and also let it run a server locally. To do so, set up Ruby and run `rackup` in the top-level directory. This allows you to test the site on other devices on the local network (ie. iPhone) to ensure the responsive design is correct via `<ip_address>:9292`. 
-
-You can also test the site directly via opening `index.html` in `\public`. I really recommend installing Ruby as it will allow you to be more rigorous in your responsive design.
-
-__Note to Emily__: Let me know if you would like staging permissions on Heroku. You just need to make an account and I can add you onto the Heroku project. 
 
 ### Development Information 
 
