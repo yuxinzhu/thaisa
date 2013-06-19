@@ -9,7 +9,7 @@ __Note On Staging Server__: I will periodically push our latest code to the stag
 
 Even though the ThaiSA site will be a static website, we should initiate the site with `python -m SimpleHTTPServer 9292` from within `\public`. This allows you to test the site on other devices on the local network (ie. iPhone) to ensure the responsive design is correct via `<ip_address>:9292`. 
 
-__Note__: For some reason, I couldn't get Ruby Rack to correctly serve static HTML files correctly (other than `index.html`). So ignore the Ruby framework for now, and just `cd` directly into `\public`. 
+__Note__: For some reason, I couldn't get Ruby Rack to correctly serve static HTML files correctly (other than `index.html`). So ignore the Ruby framework for now, and just `cd` directly into `\public`, and follow the directions above. 
 
 
 ### Development Information 
