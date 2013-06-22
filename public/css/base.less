@@ -1,0 +1,51 @@
+@container-width: 960px;
+@main-font: 'Open Sans', sans-serif;
+@selection-color: #ed1c24;
+@hover-color: #241d4f;
+
+.height(@h, @t) {
+    height: @h;
+    line-height: @h;
+    font-size: @t;
+}
+
+.font(@f, @w) {
+    font-family: @f;
+    font-weight: @w;
+
+}
+
+body {
+    .font(@main-font, 300);
+}
+
+.menu-bar {
+    display: block;
+    .font(@main-font, 300);
+    ul {
+        list-style: none;
+        li {
+            padding-top: 20px;
+            display: inline-block;
+            text-align: center;
+            width: 20%;
+            a {
+                display: block;
+                vertical-align: center;
+				color: black;
+            	width: 100%;
+                .height(30px, 17px);
+                text-decoration: none;
+            }
+            &:hover {
+                border-top: 8px @selection-color solid;
+                padding-top: 12px;
+            }
+            &.selected {
+                padding-top: 12px;
+                border-top: 8px @selection-color solid;
+            }
+        }
+
+    }
+}
