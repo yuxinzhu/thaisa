@@ -34,6 +34,7 @@ body {
   padding-top: 12px;
   border-top: 8px #ed1c24 solid;
 }
+/* SUPER UGLY NEED TO REFACTOR */
 .welcome-container {
   position: relative;
   height: 400px;
@@ -75,6 +76,7 @@ body {
   line-height: 25px;
   padding-bottom: 5px;
 }
+/* EVERYTHING IS SUPER HARD CODED, MAKE VARIABLES */
 .header {
   margin-top: 20px;
   height: 30px;
@@ -88,8 +90,17 @@ body {
   font-size: 14px;
   line-height: 21px;
 }
+.welcome-container2 {
+  height: 170px;
+  display: block;
+}
+.welcome-container1 {
+  height: 200px;
+  display: block;
+}
 .event-container {
   display: block;
+  margin-bottom: 15px;
   height: 300px;
 }
 .event-container .event-photo {
