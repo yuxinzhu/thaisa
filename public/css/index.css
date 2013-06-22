@@ -92,9 +92,11 @@ body {
 }
 .welcome-container2 {
   display: block;
+  margin-bottom: 30px;
 }
 .welcome-container1 {
   display: block;
+  margin-bottom: 30px;
 }
 .event-container {
   display: block;
