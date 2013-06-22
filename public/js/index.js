@@ -1,3 +1,6 @@
 $(document).ready(function() {
-	$('.flexslider').flexslider();
+	$('.flexslider').flexslider({
+		controlNav: false,
+		directionNav: false,
+	});
 });
