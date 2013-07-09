@@ -1,11 +1,30 @@
 @import "base.less";
 
+@event-height: 200px;
 .event-row {
-    .event-box {
-        height: 250px;
-        background-color: red;
+    .event {
+        height: @event-height;
         &.one {
-            background-color: blue;
+            position: relative;
+            background-image: url(http://cdn0.sbnation.com/imported_assets/419167/oski_092609_0438.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        &.two {
+
+            position: relative;
+            background-image: url(http://all-that-is-interesting.com/wordpress/wp-content/uploads/2012/06/fireworks-golden-gate-bridge.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            &:hover {
+                cursor: pointer;
+            }
+
         }
         &.three {
             background-color: green;
@@ -13,7 +32,38 @@
     }
 }
 
+@event-title-height: 25px;
+@event-text-top-margin: @event-height - @event-title-height;
+.event-text-container {
+    position: absolute;
+    background-color: rgb(238, 238, 238); //#eeeeee
+    opacity: 0.9;
+    width: 100%;
+    height: @event-height;
+}
 
+.event-title {
+    position: absolute;
+    background-color: #454545; //#eeeeee
+    color: white;
+    opacity: 0.85;
+    width: 100%;
+    height: @event-title-height;
+    margin-top: @event-text-top-margin;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.event-row-title {
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 300;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
 // @container-width: 960px;
 // @main-font: 'Open Sans', sans-serif;
 // @selection-color: #ed1c24;
