@@ -1,4 +1,56 @@
 @import "base.less";
+// http://cdn0.sbnation.com/imported_assets/419167/oski_092609_0438.jpg
+
+.header-event {
+    height: 350px;
+    background-image: url("../images/picture2.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    .header-event-text-container {
+        width: 20%;
+        height: 100%;
+        background: grey;
+        opacity: 0.5;
+    }
+}
+
+
+@menu-height: 45px;
+.events-menu-container {
+    display: block;
+    width: 100%;
+    height: 45px;
+
+    .events-menu {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-block;
+            margin: 5px 20px;
+            text-align: center;
+            padding: 5px 20px;
+            width: 100px;
+            .active {
+                color: blue;
+            }
+            a {
+                display: block;
+                vertical-align: center;
+                .height(25px, 15px);
+                color: black;
+                width: 100%;
+                text-decoration: none;
+            }
+        }
+        li:hover {
+            a { background: #eee; }
+        }
+    }
+}
 
 @event-height: 200px;
 .event-row {
@@ -6,7 +58,7 @@
         height: @event-height;
         &.one {
             position: relative;
-            background-image: url(http://cdn0.sbnation.com/imported_assets/419167/oski_092609_0438.jpg);
+            background-image: url("../images/event1.jpg");
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -17,9 +69,9 @@
         &.two {
 
             position: relative;
-            background-image: url(http://all-that-is-interesting.com/wordpress/wp-content/uploads/2012/06/fireworks-golden-gate-bridge.jpg);
+            background-image: url("../images/event3.jpg");
             background-size: cover;
-            background-position: center center;
+            background-position: center 25%;
             background-repeat: no-repeat;
             &:hover {
                 cursor: pointer;
@@ -33,87 +85,102 @@
 }
 
 @event-title-height: 25px;
-@event-text-top-margin: @event-height - @event-title-height;
+@event-text-top-margin: 25px;
+@event-text-height: @event-height - @event-text-top-margin;
+@subtitle-height: @event-text-height - @event-title-height; //175 - 25
+// final appearance
 .event-text-container {
     position: absolute;
-    background-color: rgb(238, 238, 238); //#eeeeee
-    opacity: 0.9;
     width: 100%;
-    height: @event-height;
-}
-
-.event-title {
-    position: absolute;
-    background-color: #454545; //#eeeeee
-    color: white;
+    background-color: white;
     opacity: 0.85;
-    width: 100%;
-    height: @event-title-height;
     margin-top: @event-text-top-margin;
-    text-align: center;
-    line-height: 25px;
-    font-size: 14px;
-    font-weight: 300;
+    height: @event-text-height;
+    .event-title {
+        position: relative;
+        background-color: #454545;
+        opacity: 0.85;
+        height: @event-title-height;
+        color: white;
+        width: 100%;
+        text-align: center;
+        line-height: 25px;
+        font-size: 14px;
+        font-weight: 300;
+        .title-arrow {
+            float: right;
+            text-align: left;
+            // position: absolute;
+            // margin-left:
+            .height(@event-title-height, 18px);
+            margin-right: 25px;
+        }
+    }
 }
 
-.event-row-title {
-    font-size: 80px;
-    line-height: 80px;
-    font-weight: 300;
-    margin-top: 40px;
-    margin-bottom: 5px;
-    margin-left: 15px;
+
+.event-subtitle {
+    position: relative;
+    height: @subtitle-height;
+
+    @subtitle-content-height: 100px;
+    @subtitle-content-vertical-margin: (@subtitle-height - @subtitle-content-height)/2;
+    @subtitle-content-left-margin: 40px;
+    .event-subtitle-content {
+        height: @subtitle-content-height;
+        margin: @subtitle-content-vertical-margin @subtitle-content-left-margin;
+        margin-right: 0;
+    }
+
+    @block-height: 0.25 * @subtitle-height;
+    .blocks {
+        display: inline-block;
+        vertical-align: top;
+        height: @block-height;
+        line-height: @block-height;
+        font-size: 25px;
+    }
+
+    .subtitle-text {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+
+    .links {
+        font-size: 14px;
+        margin-right: 20px;
+        a {
+            text-decoration: none;
+        }
+    }
 }
-// @container-width: 960px;
-// @main-font: 'Open Sans', sans-serif;
-// @selection-color: #ed1c24;
-// @hover-color: #241d4f;
 
-// .height(@h, @t) {
-//     height: @h;
-//     line-height: @h;
-//     font-size: @t;
-// }
+// .event-text-container {
+//     position: absolute;
+//     width: 100%;
+//     background-color: rgb(238, 238, 238);
+//     opacity: 0.8;
+//     margin-top: @event-height - @event-title-height;
+//     height: @event-title-height;
+//     .event-title {
+//         position: relative;
+//         background-color: #454545; //#eeeeee
+//         height: @event-title-height;
+//         color: white;
+//         opacity: 0.85;
+//         width: 100%;
+//         text-align: center;
+//         line-height: 25px;
+//         font-size: 14px;
+//         font-weight: 300;
+//     }
 
-// .font(@f, @w) {
-//     font-family: @f;
-//     font-weight: @w;
-
-// }
-
-// body {
-//     .font(@main-font, 300);
-// }
-
-// .menu-bar {
-//     display: block;
-//     .font(@main-font, 300);
-//     ul {
-//         list-style: none;
-//         li {
-//             padding-top: 20px;
-//             display: inline-block;
-//             text-align: center;
-//             width: 20%;
-//             a {
-//                 display: block;
-//                 vertical-align: center;
-//                 color: black;
-//                 width: 100%;
-//                 .height(30px, 17px);
-//                 text-decoration: none;
-//             }
-//             &:hover {
-//                 border-top: 8px @selection-color solid;
-//                 padding-top: 12px;
-//             }
-//             &.selected {
-//                 padding-top: 12px;
-//                 border-top: 8px @selection-color solid;
-//             }
-//         }
-
+//     .event-subtitle {
+//         display: none;
+//         position: relative;
+//         height: 0;
 //     }
 // }
+
 
 
