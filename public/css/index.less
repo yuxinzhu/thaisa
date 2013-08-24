@@ -1,60 +1,14 @@
-@container-width: 960px;
-@main-font: 'Open Sans', sans-serif;
-@selection-color: #ed1c24;
-@hover-color: #241d4f;
-
-.height(@h, @t) {
-    height: @h;
-    line-height: @h;
-    font-size: @t;
-}
-
-.font(@f, @w) {
-    font-family: @f;
-    font-weight: @w;
-
-}
+@import "base.less";
+@import "footer.less";
 
 body {
     .font(@main-font, 300);
 }
 
-.menu-bar {
-    display: block;
-    .font(@main-font, 300);
-    ul {
-        list-style: none;
-        li {
-            padding-top: 20px;
-            display: inline-block;
-            text-align: center;
-            width: 20%;
-            a {
-                display: block;
-                vertical-align: center;
-				color: black;
-            	width: 100%;
-                .height(30px, 17px);
-                text-decoration: none;
-            }
-            &:hover {
-                border-top: 8px @selection-color solid;
-                padding-top: 12px;
-            }
-            &.selected {
-                padding-top: 12px;
-                border-top: 8px @selection-color solid;
-            }
-        }
-
-    }
-}
-
-/* SUPER UGLY NEED TO REFACTOR */
-.welcome-container {
+.cover-photo-container {
     position: relative;
     height: 400px;
-    margin-top: 20px;
+    width: 100%;
     .flexslider{
         width: 100%;
         position: absolute;
@@ -62,39 +16,22 @@ body {
         background: none;
         border: none;
         box-shadow: none;
-        margin: 0px;
         z-index: -100;
-    }
-    .caption-container {
-        z-index: 100;
-        position: absolute;
-        height: 100px;
-        margin-top: 300px;
-        width: 100%;
-        background: white;
-        opacity: 0.90;
-        .caption {
-            margin: 0 auto;
-            width: 90%;
-            .caption-header {
-                padding-top: 10px;
-                .height(30px, 28px);
-            }
-            .caption-text-content {
-                padding-top: 10px;
-                height: 55px;
-                font-size: 15px;
-                line-height: 25px;
-                padding-bottom: 5px;
-            }
-        }
-
     }
 }
 
-/* EVERYTHING IS SUPER HARD CODED, MAKE VARIABLES */
+.events-banner-container .events-banner {
+    background-color: black;
+    .height(25px, 12px);
+    color: white;
+    .font(@main-font, 300);
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
 .header {
-    margin-top: 20px;
+    margin-top: 30px;
     .height(30px, 22px);
     font-weight: 300;
 }
@@ -102,60 +39,44 @@ body {
 .text-content {
     text-align: justify;
     margin-top: 10px;
-    font-size: 14px;
-    line-height: 21px;
+    .line-height(21px, 14px);
 }
 
-.welcome-container2 {
-    display: block;
-    margin-bottom: 30px;
-}
-
-.welcome-container1 {
-    display: block;
-    margin-bottom: 30px;
-}
-
-.event-container {
-    display: block;
-    margin-bottom: 15px;
-    // background-color: red;
-    .event-photo {
-        height: 300px;
-        background: url("../images/picture1.jpg") center center no-repeat;
-        background-size: cover;
-    }
+.news-date {
+    padding-right: 10px;
+    color: #0e5579;
 }
 
 .flex-image {
-    width: 100%;
     height: 400px;
     &.image1 {
         background: url("../images/picture2.jpg") center center no-repeat;
         background-size: cover;
     }
     &.image2 {
-        background: url("../images/picture3.jpg")center center no-repeat;
+        background: url("../images/picture3.jpg") center center no-repeat;
         background-size: cover;
     }
 }
 
-.footer {
-    display: block;
-    background-color: #1896d5;
-    width: 100%;
-    color: white;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-
-@media screen and (max-width: 768px) {
-    .flex-image {
-        height: 200px;
+@media (min-width: 768px) and (max-width: 1199px) {
+    .cover-photo-container, .flex-image {
+        height: 300px;
     }
 }
 
-@media screen and (max-width: 468px) {
 
+@media (max-width: 767px) {
+    .cover-photo-container, .flex-image {
+        height: 200px;
+    }
+    .header {
+        height: auto;
+        text-align: center;
+        font-size: 18px;
+    }
+    .events-banner-container {
+        display: none;
+    }
 }
 

@@ -1,0 +1,121 @@
+@import "base.less";
+
+
+@footer-vertical-clearance: 50px;
+@footer-background: #eee;
+@footer-header-color: black;
+@footer-text-color: black;
+@footer-link-color: black;
+.footer-container {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    margin-top: @footer-vertical-clearance;
+    width: 100%;
+    background-color: @footer-background;
+    color: white;
+    a { color: @footer-link-color; }
+}
+
+@footer-content-top-margin: 20px;
+.footer-content {
+    margin-top: @footer-content-top-margin;
+}
+
+.list-header {
+    color: @footer-header-color;
+    .height(20px, 17px);
+    margin: 10px 0px;
+}
+
+.contact-container, .sitemap-container {
+    /* Override Bootstrap Styles */
+    a {
+        text-align: left;
+        text-decoration: none;
+        .height(20px, 13px);
+        &:hover {
+            color: lighten(black, 30%);
+        }
+    }
+}
+
+.sitemap-container ul li {
+    display: inline-block;
+    vertical-align: top;
+    &:before {
+        content: "/";
+        padding: 0 2px;
+        color: @footer-text-color;
+    }
+}
+
+.tabling-container {
+    color: @footer-text-color;
+    div { .height(20px, 13px); }
+}
+
+.social-container ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    li {
+        padding-right: 20px;
+        display: inline-block;
+    }
+    @icon-size: 50px;
+    .facebook {
+        background: url(../images/no-border/facebook.png) no-repeat;
+    }
+    .email {
+        background: url(../images/no-border/email.png) no-repeat;
+    }
+    .icons {
+        .spinning-icon(50px, 0.4s);
+    }
+}
+
+.footer-bottom-container {
+    margin: 30px auto 20px auto;
+    .height(15px, 12px);
+    text-align: center;
+    color: @footer-text-color;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .social-container ul {
+        li {
+            padding-right: 5px;
+        }
+        .icons {
+            .spinning-icon(40px, 0.4s);
+        }
+    }
+    .list-header {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .footer-column {
+        text-align: center;
+        ul {
+            margin: 0px 5px;
+        }
+        ul li a {
+            font-size: 13px;
+            text-align: center;
+        }
+    }
+    .tabling-container div {
+        font-size: 13px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .footer-bottom-container {
+        margin-top: 30px;
+    }
+}

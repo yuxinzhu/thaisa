@@ -1,0 +1,211 @@
+@import "base.less";
+@import "footer.less";
+
+.background-header {
+    .font(@main-font, 300);
+    position: absolute;
+    color: #f4f4f4;
+    top: 50px;
+    left: 10%;
+    .height(150px, 150px);
+    z-index: -1;
+}
+
+@header-height: 100px;
+.header-container {
+    height: @header-height;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.header-text-container {
+    .font(@main-font, 300);
+    .height(@header-height, 40px);
+    .header-text { padding-left: 50px; }
+}
+
+@menu-height: 20px;
+@menu-bottom-margin: 30px;
+.year-menu-container {
+    margin-top: @header-height - @menu-height - @menu-bottom-margin;
+}
+
+@menu-font-size: 17px;
+.year-menu {
+    float: right;
+    .year-link {
+        cursor: pointer;
+        padding: 0 10px;
+        display: inline-block;
+        .height(@menu-height, @menu-font-size);
+        color: @link-blue;
+        &:hover {
+            color: darken(@link-blue, 10%);
+        }
+    }
+}
+
+.officer-picture {
+    .circle-picture(200px);
+    margin-bottom: 20px;
+}
+
+@officer-content-width: 85%;
+.officer-content {
+    width: @officer-content-width;
+    margin-left: (100% - @officer-content-width) / 2;
+
+    .officer-name, .officer-position, .officer-subtitle {
+        text-align: center;
+        padding-bottom: 5px;
+    }
+
+    .officer-name {
+        .height(25px, 20px);
+    }
+
+    .officer-position {
+        .height(15px, 13px);
+        font-weight: 400;
+    }
+
+    .officer-subtitle {
+        .height(15px, 13px);
+    }
+
+    .officer-description {
+        text-align: justify;
+        .font-height(18px, 13px);
+    }
+}
+
+.officer {
+    margin-bottom: 25px;
+}
+
+
+//past
+
+@year-vertical-margin: 15px;
+@year-header-left-padding: 40px;
+.year-header {
+    .height(60px, 35px);
+    .font(@main-font, 300);
+    text-align: center;
+    margin: @year-vertical-margin 0;
+    padding-left: @year-header-left-padding;
+    .top-link {
+        cursor: pointer;
+        font-size: 14px;
+        margin-left: 10px;
+        color: @link-blue;
+        &:hover {
+            color: darken(@link-blue, 10%);
+        }
+    }
+}
+
+
+.past-year-container {
+    margin-top: 20px;
+}
+
+.past-left-container .left-content {
+    position: relative;
+    margin: 0 auto;
+    .past-primary-picture {
+        .circle-picture(140px);
+    }
+
+    .past-primary-name, .past-primary-position {
+        text-align: center;
+    }
+
+    .past-primary-name {
+        margin-top: 10px;
+        .height(20px, 15px);
+    }
+
+    .past-primary-position {
+        font-weight: 400;
+        .height(20px, 13px);
+    }
+}
+
+.past-officers-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .past-officer {
+        .past-officer-name {
+            .height(20px, 16px);
+        }
+
+        .past-officer-position {
+            font-weight: 400;
+            .height(20px, 12px);
+        }
+    }
+}
+
+// Tablets
+@media (min-width: 768px) and (max-width: 1199px) {
+    .officer-picture {
+        .circle-picture(150px);
+        margin-bottom: 20px;
+    }
+    .officer-content .officer-name {
+        font-size: 18px;
+    }
+}
+
+// Mobile
+@media (max-width: 767px) {
+    .background-header, .year-menu-container, .top-link {
+        display: none;
+    }
+
+    .header-container {
+        width: 250px;
+        position: relative;
+        text-align: center;
+        .height(55px, 40px);
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
+    .header-text-container .header-text {
+        padding-left: 0;
+    }
+
+    .year-header {
+        padding-left: 0;
+        font-size: 38px;
+    }
+
+    .past-left-container .left-content {
+        margin-bottom: 15px;
+        .past-primary-name {
+            font-size: 17px;
+        }
+        .past-primary-position {
+            font-weight: 400;
+            font-size: 11px;
+        }
+    }
+
+    .past-right-container .right-content {
+        margin-top: 15px;
+    }
+
+    .past-officers-row {
+        margin: 0;
+        .past-officer {
+            text-align: center;
+            margin-bottom: 5px;
+            .past-officer-name { font-size: 14px; }
+            .past-officer-position { font-weight: 400; font-size: 12px; }
+        }
+    }
+}
+

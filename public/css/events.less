@@ -1,94 +1,92 @@
 @import "base.less";
-// http://cdn0.sbnation.com/imported_assets/419167/oski_092609_0438.jpg
+@import "footer.less";
 
-.header-event {
+.featured-container {
+    .font(@main-font, 300);
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.featured-picture {
+    -webkit-backface-visibility: hidden;
     height: 350px;
     background-image: url("../images/picture2.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    margin-top: 20px;
-    .header-event-text-container {
-        width: 20%;
-        height: 100%;
-        background: grey;
-        opacity: 0.5;
-    }
+    width: 250px;
+    position: relative;
+    margin: 0 auto;
+    border: 6px #eee solid;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
 }
 
-
-@menu-height: 45px;
-.events-menu-container {
-    display: block;
-    width: 100%;
-    height: 45px;
-
-    .events-menu {
-        list-style: none;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        li {
-            display: inline-block;
-            margin: 5px 20px;
-            text-align: center;
-            padding: 5px 20px;
-            width: 100px;
-            .active {
-                color: blue;
+.featured-content-container {
+    position: relative;
+    .background-header {
+        position: absolute;
+        color: #f8f8f8;
+        .height(150px, 150px);
+        z-index: -1;
+        margin-top: -50px;
+        margin-left: -30px;
+    }
+    .featured-header {
+        margin-left: 30px; //match bootstrap span gutter
+        .height(50px, 35px);
+    }
+    .featured-text {
+        margin-top: 15px;
+        .name {
+            font-weight: 400;
+            .height(30px, 17px);
+        }
+        .time, .location {
+            padding-top: 10px;
+            .height(30px, 13px);
+            i {
+                font-size: 22px;
+                padding-right: 10px;
             }
+        }
+        .description {
+            position: relative;
+            margin: 0 auto;
+            padding-top: 10px;
+            .line-height(18px, 13px);
+            text-align: justify;
+        }
+        .link {
+            padding-top: 10px;
+            .height(18px, 14px);
             a {
-                display: block;
-                vertical-align: center;
-                .height(25px, 15px);
-                color: black;
-                width: 100%;
                 text-decoration: none;
+                margin-right: 15px;
             }
-        }
-        li:hover {
-            a { background: #eee; }
         }
     }
 }
+
+/* Past Events */
 
 @event-height: 200px;
 .event-row {
-    .event {
-        height: @event-height;
-        &.one {
-            position: relative;
-            background-image: url("../images/event1.jpg");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            &:hover {
-                cursor: pointer;
-            }
-        }
-        &.two {
+    .font(@main-font, 300);
+}
 
-            position: relative;
-            background-image: url("../images/event3.jpg");
-            background-size: cover;
-            background-position: center 25%;
-            background-repeat: no-repeat;
-            &:hover {
-                cursor: pointer;
-            }
-
-        }
-        &.three {
-            background-color: green;
-        }
-    }
+.event {
+    height: @event-height;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:hover { cursor: pointer; }
 }
 
 @event-title-height: 25px;
 @event-text-top-margin: 25px;
 @event-text-height: @event-height - @event-text-top-margin;
-@subtitle-height: @event-text-height - @event-title-height; //175 - 25
-// final appearance
+@subtitle-height: @event-text-height - @event-title-height;
 .event-text-container {
     position: absolute;
     width: 100%;
@@ -110,22 +108,19 @@
         .title-arrow {
             float: right;
             text-align: left;
-            // position: absolute;
-            // margin-left:
             .height(@event-title-height, 18px);
             margin-right: 25px;
         }
     }
 }
 
-
 .event-subtitle {
     position: relative;
     height: @subtitle-height;
-
     @subtitle-content-height: 100px;
     @subtitle-content-vertical-margin: (@subtitle-height - @subtitle-content-height)/2;
     @subtitle-content-left-margin: 40px;
+
     .event-subtitle-content {
         height: @subtitle-content-height;
         margin: @subtitle-content-vertical-margin @subtitle-content-left-margin;
@@ -133,54 +128,93 @@
     }
 
     @block-height: 0.25 * @subtitle-height;
-    .blocks {
-        display: inline-block;
-        vertical-align: top;
-        height: @block-height;
-        line-height: @block-height;
-        font-size: 25px;
+    .location, .time, .link {
+        .height(@block-height, 14px);
+        span { margin-left: 15px; }
+        i { font-size: 25px; }
+        a { text-decoration: none; margin-right: 20px; font-size: 14px;}
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .featured-picture {
+        margin-top: 25px;
+        width: 150px;
+        height: 250px;
+    }
+    .featured-content-container {
+        .featured-header {
+            .height(50px, 35px);
+        }
+        .featured-text {
+            margin-top: 15px;
+            .name {
+                .height(25px, 14px);
+            }
+            .time, .location {
+                .height(25px, 12px);
+                i {
+                    font-size: 22px;
+                    padding-right: 5px;
+                }
+            }
+            .description {
+                padding-top: 10px;
+                .line-height(15px, 12px);
+                text-align: justify;
+            }
+            .link {
+                padding-top: 10px;
+                .height(18px, 12px);
+                a {
+                    text-decoration: none;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    .event-text-container {
+        .event-title {
+            font-size: 12px;
+        }
     }
 
-    .subtitle-text {
-        margin-left: 15px;
-        font-size: 14px;
-    }
+    .event-subtitle {
+        .event-subtitle-content {
+            margin-left: 10px;
+        }
 
-    .links {
-        font-size: 14px;
-        margin-right: 20px;
-        a {
-            text-decoration: none;
+        @block-height: 0.25 * @subtitle-height;
+        @tablet-subtitle-font-size: 13px;
+        .location, .time, .link {
+            .height(@block-height, @tablet-subtitle-font-size);
+            span { margin-left: @tablet-subtitle-font-size; }
+            i { font-size: 20px; }
+            a { text-decoration: none; margin-right: 20px; font-size: @tablet-subtitle-font-size;}
         }
     }
 }
 
-// .event-text-container {
-//     position: absolute;
-//     width: 100%;
-//     background-color: rgb(238, 238, 238);
-//     opacity: 0.8;
-//     margin-top: @event-height - @event-title-height;
-//     height: @event-title-height;
-//     .event-title {
-//         position: relative;
-//         background-color: #454545; //#eeeeee
-//         height: @event-title-height;
-//         color: white;
-//         opacity: 0.85;
-//         width: 100%;
-//         text-align: center;
-//         line-height: 25px;
-//         font-size: 14px;
-//         font-weight: 300;
-//     }
 
-//     .event-subtitle {
-//         display: none;
-//         position: relative;
-//         height: 0;
-//     }
-// }
+@media (max-width: 767px) {
+    .featured-content-container {
+        .background-header {
+            display: none;
+        }
+        .featured-header {
+            .line-height(40px, 30px);
+            text-align: center;
+            margin-left: 0; // cancel out previous gutter correction
+        }
+    }
 
 
+    .featured-picture {
+        display: none;
+    }
 
+    .featured-content-container {
+        width: 90%;
+        margin-left: 5%;
+    }
+}

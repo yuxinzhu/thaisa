@@ -1,9 +1,11 @@
 $(document).ready(function() {
-	$('.flexslider').flexslider({
+	var slider = $('.flexslider').flexslider({
 		controlNav: false,
 		directionNav: false,
-		animation: "slide",
-		// easing: ""
-
+		animation: "fade",
+		animationSpeed: 1000,
+		before: function() {
+			$(".banner").toggle(200);
+		}
 	});
 });

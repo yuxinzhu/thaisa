@@ -1,10 +1,11 @@
 $(document).ready(function() {
 	$(".event-subtitle").css("height", "0").hide();
 	$(".event-text-container").css("margin-top", "175px").height(25);
+
 	$(".event").mouseenter( function() {
 		$(this).find(".event-subtitle").stop().animate({
 			"height": "150px"
-		}, 200).show();
+		}, 100).show();
 
 		$(this).find(".event-text-container").stop().animate({
 			"height": "175px",
@@ -12,11 +13,12 @@ $(document).ready(function() {
 		})
 		$(this).find(".title-arrow").removeClass("icon-caret-up").addClass("icon-caret-down");
 	});
+
 	$(".event").mouseleave( function() { //hide function
 		var $eventSubtitle = $(this).find(".event-subtitle");
 		$eventSubtitle.stop().animate({
 			"height": "0px"
-		}, 200, function() {
+		}, 100, function() {
 			$eventSubtitle.hide();
 		});
 
