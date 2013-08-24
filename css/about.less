@@ -6,8 +6,16 @@
     color: #f8f8f8;
     .height(150px, 150px);
     z-index: -1;
-   	left: 50px;
-    top: 50px;
+   	left: 100px;
+    top: 430px;
+}
+
+.about-photo {
+    height: 400px;
+    margin-bottom: 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .about-header-container .about-header {
@@ -26,8 +34,22 @@
     .height(40px, 22px);
 }
 
+@media (min-width: 768px) and (max-width: 1199px) {
+    .about-photo {
+        height: 300px;
+    }
+    .background-header {
+        top: 330px;
+    }
+}
+
+
 @media (max-width: 767px) {
-    .background-header, .year-menu-container, .top-link {
+    .background-header {
         display: none;
+    }
+    .about-photo {
+        height: 200px;
+        margin-bottom: 10px;
     }
 }
