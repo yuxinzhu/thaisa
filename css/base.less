@@ -132,7 +132,23 @@ body {
         padding: 0px 5px;
         text-align: center;
         a {
-            .height(25px, 11px);
+            .height(25px, 12px);
+            padding-bottom: 15px;
+        }
+    }
+}
+
+// should be 320px, but hard-coded for aesthetics
+@media (max-width: 420px) {
+    .menu-bar {
+        margin: 0;
+        padding: 0;
+    }
+    .menu-bar ul li {
+        padding: 0px 4px;
+        text-align: center;
+        a {
+            .height(25px, 8px);
             padding-bottom: 15px;
         }
     }

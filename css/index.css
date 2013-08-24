@@ -57,7 +57,23 @@ body {
   .menu-bar ul li a {
     height: 25px;
     line-height: 25px;
-    font-size: 11px;
+    font-size: 12px;
+    padding-bottom: 15px;
+  }
+}
+@media (max-width: 420px) {
+  .menu-bar {
+    margin: 0;
+    padding: 0;
+  }
+  .menu-bar ul li {
+    padding: 0px 4px;
+    text-align: center;
+  }
+  .menu-bar ul li a {
+    height: 25px;
+    line-height: 25px;
+    font-size: 8px;
     padding-bottom: 15px;
   }
 }
@@ -120,7 +136,23 @@ body {
   .menu-bar ul li a {
     height: 25px;
     line-height: 25px;
-    font-size: 11px;
+    font-size: 12px;
+    padding-bottom: 15px;
+  }
+}
+@media (max-width: 420px) {
+  .menu-bar {
+    margin: 0;
+    padding: 0;
+  }
+  .menu-bar ul li {
+    padding: 0px 4px;
+    text-align: center;
+  }
+  .menu-bar ul li a {
+    height: 25px;
+    line-height: 25px;
+    font-size: 8px;
     padding-bottom: 15px;
   }
 }
@@ -351,13 +383,8 @@ body {
 }
 .flex-image {
   height: 400px;
-}
-.flex-image.image1 {
-  background: url("../images/picture2.jpg") center center no-repeat;
-  background-size: cover;
-}
-.flex-image.image2 {
-  background: url("../images/picture3.jpg") center center no-repeat;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 @media (min-width: 768px) and (max-width: 1199px) {
