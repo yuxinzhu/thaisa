@@ -1,4 +1,9 @@
 $(document).ready(function() {
-	thaisa.initCurrentOfficers();
-	thaisa.initPastOfficers();
+    $(".year-link").click(function () {
+        thaisa.scrollTo($("[data-year='" + $(this).attr("id") + "']"));
+    });
+
+    $(".top-link").click(function() {
+        thaisa.scrollTo($(".menu-bar"));
+    })
 });
